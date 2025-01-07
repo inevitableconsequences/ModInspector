@@ -5,8 +5,70 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ModInspector"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" MinHeight="450" MinWidth="800">
+
+
+    <Window.Resources>
+
+        <Style x:Key="mainButtonStyle" TargetType="Button">
+
+            <Style.Setters>
+                <Setter Property="Background" Value="LightGray"/>
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="FontFamily" Value="Cascadia Mono"/>
+                <Setter Property="FontSize" Value="25"/>
+            </Style.Setters>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="AntiqueWhite"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="Wheat"/>
+                </Trigger>
+            </Style.Triggers>
+
+        </Style>
+
+    </Window.Resources>
+
+
     <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel>
+            <Button
+                x:Name="btnHome"
+                Content="Home"
+                Height="100"
+                Click="btnHome_Click"
+                Style="{DynamicResource mainButtonStyle}"/>
+
+            <Button
+                x:Name="btnBrowser"
+                Content="Browser"
+                Height="100"
+                Click="btnBrowser_Click"
+                Style="{DynamicResource mainButtonStyle}"/>
+
+            <Button
+                x:Name="btnMods"
+                Content="Mods"
+                Height="100"
+                Click="btnMods_Click"
+                Style="{DynamicResource mainButtonStyle}"/>
+
+        </StackPanel>
+
+        <Frame
+            Grid.Column="1"
+            x:Name="mainFrame"
+            NavigationUIVisibility="Hidden"
+            Background="DarkSeaGreen"/>
 
     </Grid>
 </Window>
