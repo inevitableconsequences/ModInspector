@@ -10,6 +10,6 @@
       Background="AliceBlue">
 
     <Grid>
-        <TextBlock Text="mods" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+        
     </Grid>
 </Page>

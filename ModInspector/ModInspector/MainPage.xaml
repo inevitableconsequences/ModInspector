@@ -9,7 +9,30 @@
       Title="MainPage"
       Background="AliceBlue">
 
+
+    <Page.Resources>
+        <Style x:Key="mainTextStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Cascadia Code"/>
+            <Setter Property="FontSize" Value="22"/>
+        </Style>
+    </Page.Resources>
+
     <Grid>
-        <TextBlock Text="main" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+
+        <Image
+            x:Name="img"
+            Source="img.jpg"
+            Stretch="UniformToFill"/>
+
+        <TextBlock
+            Text="This a main page of mod inspector"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Style="{DynamicResource mainTextStyle}"/>
+
+        <TextBlock
+            Text="Mods browser tab still under development"
+            Style="{DynamicResource mainTextStyle}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="25"/>
+
     </Grid>
 </Page>

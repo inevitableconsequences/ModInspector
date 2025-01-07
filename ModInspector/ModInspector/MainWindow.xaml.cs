@@ -7,11 +7,15 @@ namespace ModInspector
     /// </summary>
     public partial class MainWindow : Window
     {
-        readonly MainPage mainPage = new();
-        readonly BrowserPage browserPage = new();
-        readonly ModsPage modsPage = new();
+        readonly internal MainPage mainPage = new();
+        readonly internal BrowserPage browserPage = new();
+        readonly internal ModsPage modsPage = new();
 
-        public MainWindow() => InitializeComponent();
+        public MainWindow()
+        {
+            InitializeComponent();
+            mainFrame.Content = mainPage;
+        }
 
         private void btnHome_Click(object sender, RoutedEventArgs e) => mainFrame.Content = mainPage;
 

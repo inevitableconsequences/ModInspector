@@ -10,6 +10,6 @@
       Background="AliceBlue">
 
     <Grid>
-        <TextBlock Text="browser" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+        <Image Source="open-11.jpg" Stretch="Fill"/>
     </Grid>
 </Page>

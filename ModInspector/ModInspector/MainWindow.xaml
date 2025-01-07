@@ -65,8 +65,9 @@
         </StackPanel>
 
         <Frame
-            Grid.Column="1"
             x:Name="mainFrame"
+            x:FieldModifier="internal"
+            Grid.Column="1"
             NavigationUIVisibility="Hidden"
             Background="DarkSeaGreen"/>
 
