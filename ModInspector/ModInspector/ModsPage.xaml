@@ -9,7 +9,82 @@
       Title="ModsPage"
       Background="AliceBlue">
 
-    <Grid>
+
+    <Page.Resources>
+
+        <Style x:Key="buttonStyle" TargetType="Button">
+            
+            <Style.Setters>
+                <Setter Property="Background" Value="LightGray"/>
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="FontFamily" Value="Cascadia Mono"/>
+                <Setter Property="FontSize" Value="25"/>
+                <Setter Property="Height" Value="100"/>
+            </Style.Setters>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="CadetBlue"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="BlueViolet"/>
+                </Trigger>
+            </Style.Triggers>
+            
+        </Style>
         
+    </Page.Resources>
+    
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="250"/>
+        </Grid.ColumnDefinitions>
+
+        <ListBox
+            x:Name="modsListBox"
+            Background="WhiteSmoke"
+            Foreground="Black"
+            SelectionMode="Multiple"
+            Margin="0,20,0,0"
+            FontFamily="Cascadia Code"
+            FontSize="20"/>
+
+        <StackPanel Grid.Column="1">
+            
+            <Button
+                x:Name="btnRefreshListOfMods"
+                Content="Refresh"
+                Click="btnRefreshListOfMods_Click"
+                Style="{DynamicResource buttonStyle}"/>
+
+            <Button
+                x:Name="btnSelectFolder"
+                Content="Folder"
+                Click="btnSelectFolder_Click"
+                Style="{DynamicResource buttonStyle}"/>
+
+            <Button
+                x:Name="btnSwitchState"
+                Content="Switch"
+                Foreground="Red"
+                Click="btnSwitchState_Click"
+                Style="{DynamicResource buttonStyle}"/>
+
+            <Button
+                x:Name="btnSelectAll"
+                Content="Select all"
+                Click="btnSelectAll_Click"
+                Style="{DynamicResource buttonStyle}"/>
+        </StackPanel>
+
+        <TextBox
+            x:Name="tbSearchMod"
+            Grid.Column="0"
+            VerticalAlignment="Top"
+            Height="20"
+            />
+
     </Grid>
 </Page>
