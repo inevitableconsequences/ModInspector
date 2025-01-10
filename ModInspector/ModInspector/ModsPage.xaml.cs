@@ -36,17 +36,20 @@ namespace ModInspector
 
             if (File.Exists(oldFilePath))
             {
-                try
-                {
-                    File.Move(oldFilePath, newFilePathWithExtension);
-                    Refresh();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Maybe something is wrong?: {ex.Message}");
-                }
+                File.Move(oldFilePath, newFilePathWithExtension);
+                Refresh();
             }
-            else MessageBox.Show($"File {oldFilePath} not found.");
+        }
+
+        private void DeleteFileExtension(string fileNameWithoutExtension)
+        {
+            string filePath = Path.Combine(ModsPath, fileNameWithoutExtension);
+
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+                Refresh();
+            }
         }
 
         private void btnSelectFolder_Click(object sender, RoutedEventArgs e)
@@ -73,6 +76,16 @@ namespace ModInspector
             modsListBox.Items.Clear();
             foreach (string item in mb)
                 modsListBox.Items.Add(item);
+        }
+
+        private void btnDeleteSelected_Click(object sender, RoutedEventArgs e)
+        {
+            List<string> sp = modsListBox.SelectedItems.Cast<string>().ToList();
+            foreach (var item in sp)
+                DeleteFileExtension(item);
+            //foreach (var item in sp)
+            //    modsListBox.Items.Add(item);
+            Refresh();
         }
     }
 }

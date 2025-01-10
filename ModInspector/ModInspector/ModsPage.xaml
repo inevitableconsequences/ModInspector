@@ -19,7 +19,7 @@
                 <Setter Property="Foreground" Value="Black"/>
                 <Setter Property="FontFamily" Value="Cascadia Mono"/>
                 <Setter Property="FontSize" Value="25"/>
-                <Setter Property="Height" Value="100"/>
+                <Setter Property="Height" Value="80"/>
             </Style.Setters>
 
             <Style.Triggers>
@@ -76,6 +76,12 @@
                 x:Name="btnSelectAll"
                 Content="Select all"
                 Click="btnSelectAll_Click"
+                Style="{DynamicResource buttonStyle}"/>
+            
+            <Button
+                x:Name="btnDeleteSelected"
+                Content="Delete"
+                Click="btnDeleteSelected_Click"
                 Style="{DynamicResource buttonStyle}"/>
             
         </StackPanel>
