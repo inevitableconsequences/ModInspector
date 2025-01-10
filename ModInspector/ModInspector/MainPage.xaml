@@ -12,7 +12,7 @@
 
     <Page.Resources>
         <Style x:Key="mainTextStyle" TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="Cascadia Code"/>
+            <Setter Property="FontFamily" Value="Cascadia Code" />
             <Setter Property="FontSize" Value="22"/>
         </Style>
     </Page.Resources>
@@ -22,17 +22,27 @@
         <Image
             x:Name="img"
             Source="img.jpg"
-            Stretch="UniformToFill"/>
+            Stretch="UniformToFill" />
 
         <TextBlock
             Text="This a main page of mod inspector"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            Style="{DynamicResource mainTextStyle}"/>
+            Style="{DynamicResource mainTextStyle}" />
 
         <TextBlock
             Text="Mods browser tab still under development"
-            Style="{DynamicResource mainTextStyle}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="25"/>
+            Style="{DynamicResource mainTextStyle}"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Margin="25" />
+        
+        <TextBlock
+            Text="You can drop mod files into center area on mods page"
+            Style="{DynamicResource mainTextStyle}"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Margin="50" />
 
     </Grid>
 </Page>
