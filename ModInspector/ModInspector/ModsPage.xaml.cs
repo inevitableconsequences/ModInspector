@@ -83,8 +83,14 @@ namespace ModInspector
             List<string> sp = modsListBox.SelectedItems.Cast<string>().ToList();
             foreach (var item in sp)
                 DeleteFileExtension(item);
-            //foreach (var item in sp)
-            //    modsListBox.Items.Add(item);
+            Refresh();
+        }
+
+        private void modsListBox_Drop(object sender, DragEventArgs e)
+        {
+            string[] paths = (string[])e.Data.GetData(DataFormats.FileDrop);
+            foreach (string path in paths)
+                File.Copy(path, $"{ModsPath}\\{Path.GetFileName(path)}", true);
             Refresh();
         }
     }

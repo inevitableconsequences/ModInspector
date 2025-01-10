@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ModsPage"
-      Background="AliceBlue">
+      Background="AliceBlue" >
 
 
     <Page.Resources>
@@ -15,19 +15,19 @@
         <Style x:Key="buttonStyle" TargetType="Button">
             
             <Style.Setters>
-                <Setter Property="Background" Value="LightGray"/>
-                <Setter Property="Foreground" Value="Black"/>
-                <Setter Property="FontFamily" Value="Cascadia Mono"/>
-                <Setter Property="FontSize" Value="25"/>
-                <Setter Property="Height" Value="80"/>
+                <Setter Property="Background" Value="LightGray" />
+                <Setter Property="Foreground" Value="Black" />
+                <Setter Property="FontFamily" Value="Cascadia Mono" />
+                <Setter Property="FontSize" Value="25" />
+                <Setter Property="Height" Value="80" />
             </Style.Setters>
 
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="CadetBlue"/>
+                    <Setter Property="Background" Value="CadetBlue" />
                 </Trigger>
                 <Trigger Property="IsPressed" Value="True">
-                    <Setter Property="Background" Value="BlueViolet"/>
+                    <Setter Property="Background" Value="BlueViolet" />
                 </Trigger>
             </Style.Triggers>
             
@@ -38,8 +38,8 @@
     <Grid>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="250" />
         </Grid.ColumnDefinitions>
 
         <ListBox
@@ -49,7 +49,9 @@
             SelectionMode="Multiple"
             Margin="0,20,0,0"
             FontFamily="Cascadia Code"
-            FontSize="20"/>
+            FontSize="20"
+            AllowDrop="True"
+            DragDrop.Drop="modsListBox_Drop" />
 
         <StackPanel Grid.Column="1">
             
@@ -57,32 +59,32 @@
                 x:Name="btnRefreshListOfMods"
                 Content="Refresh"
                 Click="btnRefreshListOfMods_Click"
-                Style="{DynamicResource buttonStyle}"/>
+                Style="{DynamicResource buttonStyle}" />
 
             <Button
                 x:Name="btnSelectFolder"
                 Content="Folder"
                 Click="btnSelectFolder_Click"
-                Style="{DynamicResource buttonStyle}"/>
+                Style="{DynamicResource buttonStyle}" />
 
             <Button
                 x:Name="btnSwitchState"
                 Content="Switch"
                 Foreground="Red"
                 Click="btnSwitchState_Click"
-                Style="{DynamicResource buttonStyle}"/>
+                Style="{DynamicResource buttonStyle}" />
 
             <Button
                 x:Name="btnSelectAll"
                 Content="Select all"
                 Click="btnSelectAll_Click"
-                Style="{DynamicResource buttonStyle}"/>
+                Style="{DynamicResource buttonStyle}" />
             
             <Button
                 x:Name="btnDeleteSelected"
                 Content="Delete"
                 Click="btnDeleteSelected_Click"
-                Style="{DynamicResource buttonStyle}"/>
+                Style="{DynamicResource buttonStyle}" />
             
         </StackPanel>
 
@@ -91,8 +93,7 @@
             Grid.Column="0"
             VerticalAlignment="Top"
             Height="20"
-            TextChanged="tbSearchMod_TextChanged"
-            />
+            TextChanged="tbSearchMod_TextChanged" />
 
     </Grid>
 </Page>
